@@ -256,6 +256,71 @@ form button:hover {
     background: linear-gradient(45deg, #5a6fd8, #6a4190);
 }
 
+/* Payment container styling */
+#payment-container {
+    margin: 30px 0;
+    padding: 20px 0;
+}
+
+.payment-separator {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    color: #666;
+    font-weight: 600;
+}
+
+.payment-separator hr {
+    flex: 1;
+    border: none;
+    height: 1px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    opacity: 0.3;
+}
+
+.payment-separator span {
+    padding: 0 20px;
+    background: white;
+    color: #667eea;
+    font-size: 1.1rem;
+}
+
+#payment-iframe {
+    width: 100%;
+    min-height: 500px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+#payment-iframe.loaded {
+    border-color: #667eea;
+    background: white;
+}
+
+.Language{
+    background-color: green;
+    border: #333 solid 5px;
+}
+
+#process-payment-btn {
+    background: linear-gradient(45deg, #4CAF50, #8BC34A) !important;
+    animation: pulse 2s infinite;
+}
+
+#process-payment-btn:hover {
+    background: linear-gradient(45deg, #45a049, #7CB342) !important;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3); }
+    50% { box-shadow: 0 12px 35px rgba(76, 175, 80, 0.5); }
+    100% { box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3); }
+}
+
 iframe {
     margin-top: 30px;
     width: 100%;
@@ -413,4 +478,75 @@ img[src=""] {
 
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, #5a6fd8, #6a4190);
+}
+
+/* Payment Success Message */
+.payment-success {
+    background: linear-gradient(135deg, #4CAF50, #8BC34A);
+    color: white;
+    padding: 40px 20px;
+    border-radius: 20px;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    animation: fadeInScale 0.8s ease-out;
+}
+
+.success-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.success-content p {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.success-content button {
+    background: white;
+    color: #4CAF50;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.success-content button:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Payment iframe styling */
+iframe {
+    margin-top: 30px;
+    width: 100%;
+    min-height: 600px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+iframe.loading {
+    opacity: 0.7;
+    pointer-events: none;
 }

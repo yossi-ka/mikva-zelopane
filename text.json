@@ -66,6 +66,10 @@
       "he": "המשך לתשלום",
       "en": "Continue to Payment"
     },
+    "process_payment_btn": {
+      "he": "בצע תשלום",
+      "en": "Process Payment"
+    },
     "video_error": {
       "he": "הדפדפן שלך אינו תומך בניגון וידאו.",
       "en": "Your browser does not support video playback."

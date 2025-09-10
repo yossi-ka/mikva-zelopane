@@ -24,22 +24,33 @@
     <section id="sec2">
         <form>
             <label for="name" data-translate="form_first_name">שם פרטי:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" >
             <label for="last-name" data-translate="form_last_name">שם משפחה:</label>
-            <input type="text" id="last-name" name="last-name" required>
+            <input type="text" id="last-name" name="last-name" >
             <label for="id-number" data-translate="form_id_number">מס' זהות:  *</label>
-            <input required type="text" id="id-number" name="id-number" required>
+            <input  type="text" id="id-number" name="id-number" >
             <label for="email" data-translate="form_email">אימייל:  *</label>
-            <input required type="email" id="email" name="email" required>
+            <input  type="email" id="email" name="email" >
             <label for="phone" data-translate="form_phone">טלפון:  *</label>
-            <input required type="tel" id="phone" name="phone" required>
+            <input  type="tel" id="phone" name="phone" >
             <label for="ticket-quantity" data-translate="form_ticket_quantity">כמות כרטיסים:  *</label>
-            <input required type="number" id="ticket-quantity" name="ticket-quantity" min="1" value="1" required>
+            <input  type="number" id="ticket-quantity" name="ticket-quantity" min="1" value="1" >
             <label for="total-amount" data-translate="form_total_amount">סה"כ לתשלום:</label>
-            <input readonly type="text" id="total-amount" name="total-amount" value="150 $" required>
-            <button type="submit" data-translate="form_submit_btn">המשך לתשלום</button>
+            <input readonly type="text" id="total-amount" name="total-amount" value="150 $" >
+            
+            <!-- Payment iframe will appear here after form submission -->
+            <div id="payment-container" style="display: none;">
+                <div class="payment-separator">
+                    <hr>
+                    <span>פרטי תשלום</span>
+                    <hr>
+                </div>
+                <iframe id="payment-iframe" src="" frameborder="0">טוען מערכת תשלומים...</iframe>
+            </div>
+            
+            <button type="submit" id="continue-payment-btn" data-translate="form_submit_btn">המשך לתשלום</button>
+            <button type="button" id="process-payment-btn" style="display: none;" data-translate="process_payment_btn">בצע תשלום</button>
         </form>
-        <iframe src="" frameborder="0">Hello world!</iframe>
     </section>
     <section id="sec3">
         <div class="gallery-video">
