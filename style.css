@@ -12,11 +12,90 @@ body {
     color: #333;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
+    transition: direction 0.3s ease;
+}
+
+/* Language Toggle Button */
+.language-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#language-btn {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border: 2px solid #667eea;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+#language-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* Language direction support */
+body[dir="ltr"] {
+    direction: ltr;
+}
+
+body[dir="ltr"] .language-toggle {
+    right: auto;
+    left: 20px;
+}
+
+body[dir="ltr"] #sec1 {
+    text-align: center;
+}
+
+body[dir="ltr"] form {
+    text-align: left;
+}
+
+body[dir="ltr"] label {
+    text-align: left;
+}
+
+body[dir="ltr"] #sec1 div {
+    justify-content: center;
+}
+
+/* Font family for English */
+body[dir="ltr"] {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+/* Responsive for language toggle */
+@media (max-width: 768px) {
+    .language-toggle {
+        top: 15px;
+        right: 15px;
+    }
+    
+    body[dir="ltr"] .language-toggle {
+        right: auto;
+        left: 15px;
+    }
+    
+    #language-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
 }
 
 /* Section 1 - Hero Section */
 #sec1 {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('Pic/1p.jpg') center/cover;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('Pic/p3.jpg') center/cover;
     color: white;
     text-align: center;
     padding: 80px 20px;

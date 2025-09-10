@@ -1,0 +1,82 @@
+{
+  "languages": {
+    "he": {
+      "name": "עברית",
+      "direction": "rtl"
+    },
+    "en": {
+      "name": "English",
+      "direction": "ltr"
+    }
+  },
+  "translations": {
+    "page_title": {
+      "he": "מקוה אומן",
+      "en": "Uman Mikvah"
+    },
+    "main_heading": {
+      "he": "רכישת כרטיסים למקוה",
+      "en": "Purchase Mikvah Tickets"
+    },
+    "sub_heading": {
+      "he": "בנין אזמרה - אומן",
+      "en": "Azmara Building - Uman"
+    },
+    "main_description": {
+      "he": "אנחנו במקווה שמנו דגש על הכל, כולל הפרטים הקטנים; מים חמים, בור קר וחם, מגבות ושמפו לכל אחד - לכל ימי ראש השנה. לא יתאפשר רק לכמות מצומצמת של אנשים, אצלינו כל לקוח הוא VIP, עושים הכל על מנת שתוכלו לטבול בהידור במקוה מפואר שהושקע במיוחד עבורכם כשאתם באים לרבינו הק' על ראש השנה.",
+      "en": "At our mikvah, we emphasize everything, including the smallest details; hot water, cold and hot pools, towels and shampoo for everyone - for all days of Rosh Hashanah. This will only be available to a limited number of people. With us, every customer is VIP, we do everything so that you can immerse with excellence in a luxurious mikvah that was specially invested for you when you come to our holy Rebbe for Rosh Hashanah."
+    },
+    "show_photos_btn": {
+      "he": "ראה תמונות",
+      "en": "View Photos"
+    },
+    "purchase_btn": {
+      "he": "אני רוצה לרכוש",
+      "en": "I Want to Purchase"
+    },
+    "form_first_name": {
+      "he": "שם פרטי:",
+      "en": "First Name:"
+    },
+    "form_last_name": {
+      "he": "שם משפחה:",
+      "en": "Last Name:"
+    },
+    "form_id_number": {
+      "he": "מס' זהות:  *",
+      "en": "ID Number:  *"
+    },
+    "form_email": {
+      "he": "אימייל:  *",
+      "en": "Email:  *"
+    },
+    "form_phone": {
+      "he": "טלפון:  *",
+      "en": "Phone:  *"
+    },
+    "form_ticket_quantity": {
+      "he": "כמות כרטיסים:  *",
+      "en": "Number of Tickets:  *"
+    },
+    "form_total_amount": {
+      "he": "סה\"כ לתשלום:",
+      "en": "Total Amount:"
+    },
+    "form_submit_btn": {
+      "he": "המשך לתשלום",
+      "en": "Continue to Payment"
+    },
+    "video_error": {
+      "he": "הדפדפן שלך אינו תומך בניגון וידאו.",
+      "en": "Your browser does not support video playback."
+    },
+    "image_alt": {
+      "he": "תמונה",
+      "en": "Image"
+    },
+    "language_switch": {
+      "he": "English",
+      "en": "עברית"
+    }
+  }
+}

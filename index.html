@@ -1,62 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מקוה אומן</title>
+    <title data-translate="page_title">מקוה אומן</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Language Toggle Button -->
+    <div class="language-toggle">
+        <button id="language-btn" data-translate="language_switch">English</button>
+    </div>
+    
     <section id="sec1">
-        <h1>רכישת כרטיסים למקוה</h1>
-        <h2>בנין אזמרה - אומן</h2>
-        <p>אנחנו במקווה שמנו דגש על הכל, כולל הפרטים הקטנים; מים חמים, בור קר וחם, מגבות ושמפו לכל אחד - לכל ימי ראש השנה. לא יתאפשר רק לכמות מצומצמת של אנשים, אצלינו כל לקוח הוא VIP, עושים הכל על מנת שתוכלו לטבול בהידור במקוה מפואר שהושקע במיוחד עבורכם כשאתם באים לרבינו הק' על ראש השנה.</p>
+        <h1 data-translate="main_heading">רכישת כרטיסים למקוה</h1>
+        <h2 data-translate="sub_heading">בנין אזמרה - אומן</h2>
+        <p data-translate="main_description">אנחנו במקווה שמנו דגש על הכל, כולל הפרטים הקטנים; מים חמים, בור קר וחם, מגבות ושמפו לכל אחד - לכל ימי ראש השנה. לא יתאפשר רק לכמות מצומצמת של אנשים, אצלינו כל לקוח הוא VIP, עושים הכל על מנת שתוכלו לטבול בהידור במקוה מפואר שהושקע במיוחד עבורכם כשאתם באים לרבינו הק' על ראש השנה.</p>
         <div>
-            <button id="show-photos-btn">ראה תמונות</button>
-            <button id="purchase-btn">אני רוצה לרכוש</button>
+            <button id="show-photos-btn" data-translate="show_photos_btn">ראה תמונות</button>
+            <button id="purchase-btn" data-translate="purchase_btn">אני רוצה לרכוש</button>
         </div>
     </section>
     <section id="sec2">
         <form>
-            <label for="name">שם פרטי:</label>
+            <label for="name" data-translate="form_first_name">שם פרטי:</label>
             <input type="text" id="name" name="name" required>
-            <label for="last-name">שם משפחה:</label>
+            <label for="last-name" data-translate="form_last_name">שם משפחה:</label>
             <input type="text" id="last-name" name="last-name" required>
-            <label for="id-number">מס' זהות:  *</label>
+            <label for="id-number" data-translate="form_id_number">מס' זהות:  *</label>
             <input required type="text" id="id-number" name="id-number" required>
-            <label for="email">אימייל:  *</label>
+            <label for="email" data-translate="form_email">אימייל:  *</label>
             <input required type="email" id="email" name="email" required>
-            <label for="phone">טלפון:  *</label>
+            <label for="phone" data-translate="form_phone">טלפון:  *</label>
             <input required type="tel" id="phone" name="phone" required>
-            <label for="ticket-quantity">כמות כרטיסים:  *</label>
+            <label for="ticket-quantity" data-translate="form_ticket_quantity">כמות כרטיסים:  *</label>
             <input required type="number" id="ticket-quantity" name="ticket-quantity" min="1" value="1" required>
-            <label for="total-amount">סה"כ לתשלום:</label>
+            <label for="total-amount" data-translate="form_total_amount">סה"כ לתשלום:</label>
             <input readonly type="text" id="total-amount" name="total-amount" value="150 $" required>
-            <button type="submit">המשך לתשלום</button>
+            <button type="submit" data-translate="form_submit_btn">המשך לתשלום</button>
         </form>
         <iframe src="" frameborder="0">Hello world!</iframe>
     </section>
     <section id="sec3">
-        <!-- <h2>גלריה</h2> -->
         <div class="gallery-video">
             <video controls poster="Pic/1p.jpg">
                 <source src="Pic/v1.mp4" type="video/mp4">
-                הדפדפן שלך אינו תומך בניגון וידאו.
+                <span data-translate="video_error">הדפדפן שלך אינו תומך בניגון וידאו.</span>
             </video>
         </div>
         <div class="gallery">
-            <img src="Pic/1p.jpg" alt="תמונה 1">
-            <img src="Pic/p2.jpg" alt="תמונה 2">
-            <img src="Pic/p3.jpg" alt="תמונה 3">
-            <img src="Pic/p4.jpg" alt="תמונה 4">
-            <img src="Pic/p5.jpg" alt="תמונה 5">
-            <img src="Pic/p6.jpg" alt="תמונה 6">
-            <img src="Pic/p7.jpg" alt="תמונה 7">
-            <img src="Pic/p8.jpg" alt="תמונה 8">
-            <img src="Pic/p9.jpg" alt="תמונה 9">
-            <img src="Pic/p10.jpg" alt="תמונה 10">
-            <img src="Pic/p11.jpg" alt="תמונה 11">
-            <img src="Pic/p12.jpg" alt="תמונה 12">
+            <img src="Pic/1p.jpg" alt="" data-alt-translate="image_alt">
+            <img src="Pic/p2.jpg" alt="" data-alt-translate="image_alt">
+            <img src="Pic/p3.jpg" alt="" data-alt-translate="image_alt">
+            <img src="Pic/p4.jpg" alt="" data-alt-translate="image_alt">
+            <img src="Pic/p5.jpg" alt="" data-alt-translate="image_alt">
+            <img src="Pic/p6.jpg" alt="" data-alt-translate="image_alt">
+            <img src="Pic/p7.jpg" alt="" data-alt-translate="image_alt">
+            <img src="Pic/p8.jpg" alt="" data-alt-translate="image_alt">
+            <img src="Pic/p9.jpg" alt="" data-alt-translate="image_alt">
+            <img src="Pic/p10.jpg" alt="" data-alt-translate="image_alt">
+            <img src="Pic/p11.jpg" alt="" data-alt-translate="image_alt">
+            <img src="Pic/p12.jpg" alt="" data-alt-translate="image_alt">
         </div>
     </section>
     
