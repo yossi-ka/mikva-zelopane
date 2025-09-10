@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מקוה אומן</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="sec1">
+        <h1>רכישת כרטיסים למקוה</h1>
+        <h2>בנין אזמרה - אומן</h2>
+        <p>אנחנו במקווה שמנו דגש על הכל, כולל הפרטים הקטנים; מים חמים, בור קר וחם, מגבות ושמפו לכל אחד - לכל ימי ראש השנה. לא יתאפשר רק לכמות מצומצמת של אנשים, אצלינו כל לקוח הוא VIP, עושים הכל על מנת שתוכלו לטבול בהידור במקוה מפואר שהושקע במיוחד עבורכם כשאתם באים לרבינו הק' על ראש השנה.</p>
+        <div>
+            <button id="show-photos-btn">ראה תמונות</button>
+            <button id="purchase-btn">אני רוצה לרכוש</button>
+        </div>
+    </section>
+    <section id="sec2">
+        <form>
+            <label for="name">שם פרטי:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="last-name">שם משפחה:</label>
+            <input type="text" id="last-name" name="last-name" required>
+            <label for="id-number">מס' זהות:  *</label>
+            <input required type="text" id="id-number" name="id-number" required>
+            <label for="email">אימייל:  *</label>
+            <input required type="email" id="email" name="email" required>
+            <label for="phone">טלפון:  *</label>
+            <input required type="tel" id="phone" name="phone" required>
+            <label for="ticket-quantity">כמות כרטיסים:  *</label>
+            <input required type="number" id="ticket-quantity" name="ticket-quantity" min="1" value="1" required>
+            <label for="total-amount">סה"כ לתשלום:</label>
+            <input readonly type="text" id="total-amount" name="total-amount" value="150 $" required>
+            <button type="submit">המשך לתשלום</button>
+        </form>
+        <iframe src="" frameborder="0">Hello world!</iframe>
+    </section>
+    <section id="sec3"></section>
+    
+    <script src="app.js"></script>
+</body>
+</html>
