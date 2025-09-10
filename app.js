@@ -8,7 +8,7 @@ async function loadTranslations() {
         const response = await fetch('text.json');
         const data = await response.json();
         translations = data.translations;
-        
+
         // Initialize with default language
         changeLanguage(currentLanguage);
     } catch (error) {
@@ -19,13 +19,13 @@ async function loadTranslations() {
 // Change language function
 function changeLanguage(lang) {
     currentLanguage = lang;
-    
+
     // Update HTML lang and dir attributes
     const html = document.documentElement;
     const body = document.body;
-    
+
     html.setAttribute('lang', lang);
-    
+
     if (lang === 'he') {
         body.setAttribute('dir', 'rtl');
         body.style.direction = 'rtl';
@@ -33,22 +33,22 @@ function changeLanguage(lang) {
         body.setAttribute('dir', 'ltr');
         body.style.direction = 'ltr';
     }
-    
+
     // Update all translatable elements
     updateTranslations();
-    
+
     // Update language button text
     const languageBtn = document.getElementById('language-btn');
     if (languageBtn) {
         languageBtn.textContent = translations.language_switch[lang];
     }
-    
+
     // Update page title
     const title = document.querySelector('title');
     if (title && translations.page_title) {
         title.textContent = translations.page_title[lang];
     }
-    
+
     // Save language preference
     localStorage.setItem('selectedLanguage', lang);
 }
@@ -63,7 +63,7 @@ function updateTranslations() {
             element.textContent = translations[key][currentLanguage];
         }
     });
-    
+
     // Update alt attributes for images
     const imgElements = document.querySelectorAll('[data-alt-translate]');
     imgElements.forEach((img, index) => {
@@ -75,18 +75,18 @@ function updateTranslations() {
 }
 
 // Language toggle event listener
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Load saved language preference
     const savedLanguage = localStorage.getItem('selectedLanguage') || 'he';
     currentLanguage = savedLanguage;
-    
+
     // Load translations
     loadTranslations();
-    
+
     // Add language button event listener
     const languageBtn = document.getElementById('language-btn');
     if (languageBtn) {
-        languageBtn.addEventListener('click', function() {
+        languageBtn.addEventListener('click', function () {
             const newLang = currentLanguage === 'he' ? 'en' : 'he';
             changeLanguage(newLang);
         });
