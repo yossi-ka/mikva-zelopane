@@ -71,7 +71,7 @@ function isValidIsraeliID(id) // בדיקת ספרת ביקורת
 const PAYMENT_CONFIG = {
     mosad: 'כאן 7 ספרות שקיבלת',
     apiValid: 'כאן 10 תווים שקיבלת',
-    currency: '1', // 1=שקל, 2=דולר
+    currency: '2', // 1=שקל, 2=דולר
     paymentType: 'Ragil'
 };
 ```

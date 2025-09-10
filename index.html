@@ -35,6 +35,7 @@
             <input  type="tel" id="phone" name="phone" >
             <label for="ticket-quantity" data-translate="form_ticket_quantity">כמות כרטיסים:  *</label>
             <input  type="number" id="ticket-quantity" name="ticket-quantity" min="1" value="1" >
+           
             <label for="total-amount" data-translate="form_total_amount">סה"כ לתשלום:</label>
             <input readonly type="text" id="total-amount" name="total-amount" value="150 $" >
             
@@ -42,10 +43,33 @@
             <div id="payment-container" style="display: none;">
                 <div class="payment-separator">
                     <hr>
-                    <span>פרטי תשלום</span>
+                    <span data-translate="payment_details">פרטי תשלום</span>
                     <hr>
                 </div>
-                <iframe id="payment-iframe" src="" frameborder="0">טוען מערכת תשלומים...</iframe>
+                
+                <div class="payment-form-fields">
+                    <div class="form-group">
+                        <label for="payment-installments" data-translate="installments_label">מספר תשלומים:</label>
+                        <select id="payment-installments" name="installments" class="form-control">
+                            <option value="1" data-translate="installments_1">תשלום אחד</option>
+                            <option value="2" data-translate="installments_2">2 תשלומים</option>
+                            <option value="3" data-translate="installments_3">3 תשלומים</option>
+                            <option value="4" data-translate="installments_4">4 תשלומים</option>
+                            <option value="5" data-translate="installments_5">5 תשלומים</option>
+                            <option value="6" data-translate="installments_6">6 תשלומים</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="payment-total" data-translate="total_amount_label">סה"כ לתשלום:</label>
+                        <div class="total-display">
+                            <span id="payment-total-amount">150</span> 
+                            <span data-translate="currency">$</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <iframe id="payment-iframe" src="" frameborder="0" data-translate="loading_payment">טוען מערכת תשלומים...</iframe>
             </div>
             
             <button type="submit" id="continue-payment-btn" data-translate="form_submit_btn">המשך לתשלום</button>

@@ -8,7 +8,7 @@ async function loadTranslations() {
         const response = await fetch('text.json');
         const data = await response.json();
         translations = data.translations;
-        
+
         // Initialize with default language
         changeLanguage(currentLanguage);
     } catch (error) {
@@ -19,13 +19,13 @@ async function loadTranslations() {
 // Change language function
 function changeLanguage(lang) {
     currentLanguage = lang;
-    
+
     // Update HTML lang and dir attributes
     const html = document.documentElement;
     const body = document.body;
-    
+
     html.setAttribute('lang', lang);
-    
+
     if (lang === 'he') {
         body.setAttribute('dir', 'rtl');
         body.style.direction = 'rtl';
@@ -33,22 +33,22 @@ function changeLanguage(lang) {
         body.setAttribute('dir', 'ltr');
         body.style.direction = 'ltr';
     }
-    
+
     // Update all translatable elements
     updateTranslations();
-    
+
     // Update language button text
     const languageBtn = document.getElementById('language-btn');
     if (languageBtn) {
         languageBtn.textContent = translations.language_switch[lang];
     }
-    
+
     // Update page title
     const title = document.querySelector('title');
     if (title && translations.page_title) {
         title.textContent = translations.page_title[lang];
     }
-    
+
     // Save language preference
     localStorage.setItem('selectedLanguage', lang);
 }
@@ -63,7 +63,7 @@ function updateTranslations() {
             element.textContent = translations[key][currentLanguage];
         }
     });
-    
+
     // Update alt attributes for images
     const imgElements = document.querySelectorAll('[data-alt-translate]');
     imgElements.forEach((img, index) => {
@@ -75,18 +75,18 @@ function updateTranslations() {
 }
 
 // Initialize language system
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Load saved language preference
     const savedLanguage = localStorage.getItem('selectedLanguage') || 'he';
     currentLanguage = savedLanguage;
-    
+
     // Load translations
     loadTranslations();
-    
+
     // Add language button event listener
     const languageBtn = document.getElementById('language-btn');
     if (languageBtn) {
-        languageBtn.addEventListener('click', function() {
+        languageBtn.addEventListener('click', function () {
             const newLang = currentLanguage === 'he' ? 'en' : 'he';
             changeLanguage(newLang);
         });
@@ -103,7 +103,25 @@ ticketQuantityInput.addEventListener('input', () => {
     const quantity = parseInt(ticketQuantityInput.value) || 0;
     const total = quantity * ticketPrice;
     totalAmountInput.value = total + ' $';
+
+    // Update payment container total as well
+    const paymentTotalAmount = document.getElementById('payment-total-amount');
+    if (paymentTotalAmount) {
+        paymentTotalAmount.textContent = total;
+    }
 });
+
+// Update payment details when installments change
+function updatePaymentDetails() {
+    const installmentsSelect = document.getElementById('payment-installments');
+    const paymentTotalAmount = document.getElementById('payment-total-amount');
+
+    if (installmentsSelect && paymentTotalAmount) {
+        const quantity = parseInt(ticketQuantityInput.value) || 0;
+        const total = quantity * ticketPrice;
+        paymentTotalAmount.textContent = total;
+    }
+}
 
 // Navigation functionality for buttons
 document.getElementById('show-photos-btn').addEventListener('click', function () {
@@ -150,6 +168,9 @@ document.addEventListener('DOMContentLoaded', function () {
         continueBtn.style.display = 'none';
         processBtn.style.display = 'block';
 
+        // Update payment details
+        updatePaymentDetails();
+
         // Load iframe with payment data
         loadIframeWithPaymentData();
 
@@ -171,6 +192,14 @@ document.addEventListener('DOMContentLoaded', function () {
         processBtn.textContent = 'מעבד תשלום...';
         processBtn.disabled = true;
     });
+
+    // Add event listener for installments changes
+    setTimeout(() => {
+        const installmentsSelect = document.getElementById('payment-installments');
+        if (installmentsSelect) {
+            installmentsSelect.addEventListener('change', updatePaymentDetails);
+        }
+    }, 100);
 });
 
 // ===== MATARA.PRO IFRAME PAYMENT FUNCTIONS =====
@@ -179,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function () {
 const PAYMENT_CONFIG = {
     mosad: 'XXXXXXX', // 7-digit institution ID - GET FROM MATARA.PRO
     apiValid: 'XXXXXXXXXX', // API validation code - REQUEST FROM MATARA.PRO
-    currency: '1', // 1 = Shekel, 2 = Dollar
+    currency: '2', // 1 = Shekel, 2 = Dollar
     paymentType: 'Ragil' // Regular payment type
 };
 
@@ -223,12 +252,13 @@ function handleIframeMessage(data) {
 // Load iframe and send payment data according to documentation
 function loadIframeWithPaymentData() {
     const iframe = document.getElementById('payment-iframe');
+    const paymentContainer = document.getElementById('payment-container');
 
     console.log('Loading iframe with payment data...');
 
     // First, load the iframe
     iframe.src = 'https://www.matara.pro/nedarimplus/iframe/';
-    iframe.classList.add('loaded');
+    paymentContainer.classList.add('loaded');
 
     // Wait for iframe to load, then send data
     iframe.onload = function () {
