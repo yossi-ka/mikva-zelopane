@@ -125,6 +125,10 @@
     "currency": {
       "he": "$",
       "en": "$"
+    },
+    "processing_payment": {
+      "he": "מעבד תשלום...",
+      "en": "Processing Payment..."
     }
   }
 }

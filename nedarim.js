@@ -3,11 +3,28 @@
 
 // Payment configuration - REPLACE WITH YOUR ACTUAL CREDENTIALS
 const PAYMENT_CONFIG = {
-    mosad: 'XXXXXXX', // 7-digit institution ID - GET FROM MATARA.PRO
-    apiValid: 'XXXXXXXXXX', // API validation code - REQUEST FROM MATARA.PRO
+    mosad: '7014477', // 7-digit institution ID - GET FROM MATARA.PRO
+    apiValid: '1QFNYV+nZA', // API validation code - REQUEST FROM MATARA.PRO
     currency: '2', // 1 = Shekel, 2 = Dollar
     paymentType: 'Ragil' // Regular payment type
 };
+
+// Function to restore process button to normal state
+function restoreProcessButton() {
+    const processBtn = document.getElementById('process-payment-btn');
+    if (processBtn) {
+        // Check if translations are available (from app.js)
+        if (typeof translations !== 'undefined' && typeof currentLanguage !== 'undefined') {
+            const normalText = translations['process_payment_btn'] && translations['process_payment_btn'][currentLanguage]
+                ? translations['process_payment_btn'][currentLanguage]
+                : 'בצע תשלום';
+            processBtn.textContent = normalText;
+        } else {
+            processBtn.textContent = 'בצע תשלום';
+        }
+        processBtn.disabled = false;
+    }
+}
 
 // Initialize iframe communication according to documentation
 function initializeIframe() {
@@ -183,6 +200,9 @@ function handlePaymentError(data) {
     continueBtn.style.display = 'block';
     processBtn.style.display = 'none';
     paymentContainer.style.display = 'none';
+
+    // Restore process button to normal state
+    restoreProcessButton();
 }
 
 // Israeli ID validation function

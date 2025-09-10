@@ -75,6 +75,24 @@ function updateTranslations() {
             img.setAttribute('alt', translations[key][currentLanguage] + ' ' + (index + 1));
         }
     });
+
+    // Update processing payment button based on its current state
+    const processBtn = document.getElementById('process-payment-btn');
+    if (processBtn) {
+        if (processBtn.disabled && (processBtn.textContent.includes('מעבד') || processBtn.textContent.includes('Processing'))) {
+            // Button is in processing state - update processing text
+            const processingText = translations['processing_payment'] && translations['processing_payment'][currentLanguage]
+                ? translations['processing_payment'][currentLanguage]
+                : 'מעבד תשלום...';
+            processBtn.textContent = processingText;
+        } else if (!processBtn.disabled) {
+            // Button is in normal state - update normal text
+            const normalText = translations['process_payment_btn'] && translations['process_payment_btn'][currentLanguage]
+                ? translations['process_payment_btn'][currentLanguage]
+                : 'בצע תשלום';
+            processBtn.textContent = normalText;
+        }
+    }
 }
 
 // Initialize language system
@@ -147,6 +165,22 @@ document.addEventListener('DOMContentLoaded', function () {
     const continueBtn = document.getElementById('continue-payment-btn');
     const processBtn = document.getElementById('process-payment-btn');
 
+    // Store original button text for restoration
+    let originalProcessBtnText = '';
+
+    // Function to get current translated text for process button
+    function getProcessButtonText() {
+        return translations['process_payment_btn'] && translations['process_payment_btn'][currentLanguage]
+            ? translations['process_payment_btn'][currentLanguage]
+            : 'בצע תשלום';
+    }
+
+    // Function to restore process button to normal state
+    function restoreProcessButton() {
+        processBtn.textContent = getProcessButtonText();
+        processBtn.disabled = false;
+    }
+
     // Continue to payment button
     form.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -192,7 +226,10 @@ document.addEventListener('DOMContentLoaded', function () {
         sendPaymentDataToIframe();
 
         // Change button text to indicate processing
-        processBtn.textContent = 'מעבד תשלום...';
+        const processingText = translations['processing_payment'] && translations['processing_payment'][currentLanguage]
+            ? translations['processing_payment'][currentLanguage]
+            : 'מעבד תשלום...';
+        processBtn.textContent = processingText;
         processBtn.disabled = true;
     });
 
