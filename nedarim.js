@@ -2,12 +2,10 @@
 // ===== MATARA.PRO IFRAME PAYMENT FUNCTIONS =====
 
 // Payment configuration - הגדרות תשלום
-// 🚨 TEST MODE: Changed for 1 NIS testing - REMEMBER TO REVERT!
 const PAYMENT_CONFIG = {
     mosad: '7005806',        // מזהה מוסד בנדרים פלוס (7 ספרות)
     apiValid: 'CDMSfoGz4j',  // טקסט אימות
-    // ORIGINAL LINE (to restore): currency: '2',           // מטבע: 1 (שקל) | 2 (דולר)
-    currency: '1',           // מטבע: 1 (שקל) | 2 (דולר) - CHANGED FOR TESTING!
+    currency: '2',           // מטבע: 1 (שקל) | 2 (דולר) - CHANGED FOR TESTING!
     paymentType: 'Ragil'     // סוג תשלום: Ragil (עסקה רגילה)
 };
 
@@ -232,11 +230,9 @@ function sendPaymentDataToIframe() {
     const formEntries = Object.fromEntries(formData.entries());
 
     // Get clean amount (remove $ sign)
-    // 🚨 TEST MODE: Force amount to 1 NIS for testing - REMEMBER TO REVERT!
     const totalAmountElement = document.getElementById('total-amount');
     const rawAmount = totalAmountElement?.value || '0';
-    // ORIGINAL LINE (to restore): const amountValue = rawAmount.replace(/[^0-9]/g, '');
-    const amountValue = '1.03'; // FORCED TO 1 FOR TESTING!
+    const amountValue = rawAmount.replace(/[^0-9]/g, '');
 
     const paymentData = {
         // פרמטרים חובה
