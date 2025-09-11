@@ -133,6 +133,14 @@
     "organization_logo_alt": {
       "he": "לוגו הארגון",
       "en": "Organization Logo"
+    },
+    "billing_name": {
+      "he": "החיוב ע\"ש: צלילים לנשמה",
+      "en": "Billing under the name: Tzelilim Laneshama"
+    },
+    "billing_organization": {
+      "he": "צלילים לנשמה",
+      "en": "Tzelilim Laneshama"
     }
   }
 }

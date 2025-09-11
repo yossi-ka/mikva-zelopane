@@ -3,10 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="page_title">מקוה אומן</title>
+    <title data-translate="page_title">מקוה אומן - רכישת כרטיסים למקוה בראש השנה</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="מקוה מפואר באומן לראש השנה. רכישת כרטיסים למקוה בבנין אזמרה. מים חמים, מגבות ושמפו לכל ימי ראש השנה מרביעי עד צום גדליה.">
+    <meta name="keywords" content="מקוה אומן, ראש השנה, רבי נחמן, בנין אזמרה, מקוה אוקראינה, כרטיסים למקוה, מקוה לראש השנה">
+    <meta name="author" content="מקוה אומן">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Hebrew">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="מקוה אומן - רכישת כרטיסים לראש השנה">
+    <meta property="og:description" content="מקוה מפואר באומן לראש השנה. כרטיסי כניסה מרביעי עד צום גדליה. מים חמים, מגבות ושמפו כלולים.">
+    <meta property="og:image" content="Pic/logo.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="he_IL">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="מקוה אומן - רכישת כרטיסים לראש השנה">
+    <meta name="twitter:description" content="מקוה מפואר באומן לראש השנה. כרטיסי כניסה מרביעי עד צום גדליה.">
+    <meta name="twitter:image" content="Pic/logo.jpg">
+    
+    <!-- Geo Location -->
+    <meta name="geo.region" content="UA-71">
+    <meta name="geo.placename" content="Uman, Ukraine">
+    <meta name="geo.position" content="48.7593;30.2214">
+    <meta name="ICBM" content="48.7593, 30.2214">
+    
+    <!-- Structured Data for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "מקוה אומן",
+      "description": "מקוה מפואר באומן לראש השנה בבנין אזמרה",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Uman",
+        "addressCountry": "Ukraine"
+      },
+      "telephone": "+380",
+      "priceRange": "$150",
+      "image": "Pic/logo.jpg",
+      "serviceType": "Religious Services",
+      "areaServed": "Uman"
+    }
+    </script>
+    
     <link rel="icon" type="image/jpeg" href="Pic/logo.jpg">
     <link rel="shortcut icon" type="image/jpeg" href="Pic/logo.jpg">
     <link rel="apple-touch-icon" href="Pic/logo.jpg">
+    <link rel="canonical" href="https://yourdomain.com/">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,9 +64,9 @@
     </div>
     
     <section id="sec1">
-        <img src="Pic/logo.jpg" data-alt-translate="organization_logo_alt" alt="לוגו הארגון" class="organization-logo">
-        <h1 data-translate="main_heading">רכישת כרטיסים למקוה</h1>
-        <h2 data-translate="sub_heading">בנין אזמרה - אומן</h2>
+        <img src="Pic/logo.jpg" data-alt-translate="organization_logo_alt" alt="לוגו מקוה אומן" class="organization-logo">
+        <h1 data-translate="main_heading">רכישת כרטיסים למקוה אומן לראש השנה</h1>
+        <h2 data-translate="sub_heading">בנין אזמרה - אומן, אוקראינה</h2>
         <p data-translate="main_description">אנחנו במקווה שמנו דגש על הכל, כולל הפרטים הקטנים; מים חמים, בור קר וחם, מגבות ושמפו לכל אחד - לכל ימי ראש השנה. לא יתאפשר רק לכמות מצומצמת של אנשים, אצלינו כל לקוח הוא VIP, עושים הכל על מנת שתוכלו לטבול בהידור במקוה מפואר שהושקע במיוחד עבורכם כשאתם באים לרבינו הק' על ראש השנה.</p>
         <div>
             <button id="show-photos-btn" data-translate="show_photos_btn">ראה תמונות</button>
@@ -26,6 +74,7 @@
         </div>
     </section>
     <section id="sec2">
+        <h2>הזמנת כרטיסים למקוה</h2>
         <form>
             <label for="name" data-translate="form_first_name">שם פרטי:</label>
             <input type="text" id="name" name="name" >
@@ -59,6 +108,9 @@
                             <span data-translate="currency">$</span>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label data-translate="billing_name">החיוב ע"ש: צלילים לנשמה</label>
+                    </div>
                 </div>
                 
                 <iframe id="payment-iframe" src="" frameborder="0" data-translate="loading_payment">טוען מערכת תשלומים...</iframe>
@@ -69,6 +121,7 @@
         </form>
     </section>
     <section id="sec3">
+        <h2>תמונות המקוה</h2>
         <div class="gallery-video">
             <video controls poster="Pic/1p.jpg">
                 <source src="Pic/v1.mp4" type="video/mp4">
