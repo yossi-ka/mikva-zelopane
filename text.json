@@ -20,7 +20,7 @@
     },
     "sub_heading": {
       "he": "בנין אזמרה - אומן",
-      "en": "Azmara Building - Uman"
+      "en": "Azamra Building - Uman"
     },
     "main_description": {
       "he": "אנחנו במקווה שמנו דגש על הכל, כולל הפרטים הקטנים; מים חמים, בור קר וחם, מגבות ושמפו לכל אחד - לכל ימי ראש השנה. הרכישה תתאפשר רק לכמות מצומצמת של אנשים, אצלינו כל לקוח הוא VIP, עושים הכל על מנת שתוכלו לטבול בהידור במקוה מפואר שהושקע במיוחד עבורכם כשאתם באים לרבינו הק' על ראש השנה.",
@@ -90,34 +90,6 @@
       "he": "English",
       "en": "עברית"
     },
-    "installments_label": {
-      "he": "מספר תשלומים:",
-      "en": "Number of Installments:"
-    },
-    "installments_1": {
-      "he": "תשלום אחד",
-      "en": "Single Payment"
-    },
-    "installments_2": {
-      "he": "2 תשלומים",
-      "en": "2 Installments"
-    },
-    "installments_3": {
-      "he": "3 תשלומים",
-      "en": "3 Installments"
-    },
-    "installments_4": {
-      "he": "4 תשלומים",
-      "en": "4 Installments"
-    },
-    "installments_5": {
-      "he": "5 תשלומים",
-      "en": "5 Installments"
-    },
-    "installments_6": {
-      "he": "6 תשלומים",
-      "en": "6 Installments"
-    },
     "total_amount_label": {
       "he": "סה\"כ לתשלום:",
       "en": "Total Amount:"
@@ -129,6 +101,34 @@
     "processing_payment": {
       "he": "מעבד תשלום...",
       "en": "Processing Payment..."
+    },
+    "payment_success_title": {
+      "he": "✅ תשלום בוצע בהצלחה!",
+      "en": "✅ Payment Successful!"
+    },
+    "confirmation_number": {
+      "he": "מספר אישור:",
+      "en": "Confirmation Number:"
+    },
+    "amount": {
+      "he": "סכום:",
+      "en": "Amount:"
+    },
+    "date": {
+      "he": "תאריך:",
+      "en": "Date:"
+    },
+    "thank_you_message": {
+      "he": "תודה שבחרת במקוה שלנו!",
+      "en": "Thank you for choosing our Mikvah!"
+    },
+    "back_to_home": {
+      "he": "חזור לעמוד הראשי",
+      "en": "Back to Home Page"
+    },
+    "will_be_sent_by_email": {
+      "he": "יתקבל במייל",
+      "en": "Will be sent by email"
     }
   }
 }

@@ -132,18 +132,6 @@ ticketQuantityInput.addEventListener('input', () => {
     }
 });
 
-// Update payment details when installments change
-function updatePaymentDetails() {
-    const installmentsSelect = document.getElementById('payment-installments');
-    const paymentTotalAmount = document.getElementById('payment-total-amount');
-
-    if (installmentsSelect && paymentTotalAmount) {
-        const quantity = parseInt(ticketQuantityInput.value) || 0;
-        const total = quantity * ticketPrice;
-        paymentTotalAmount.textContent = total;
-    }
-}
-
 // Navigation functionality for buttons
 document.getElementById('show-photos-btn').addEventListener('click', function () {
     document.getElementById('sec3').scrollIntoView({
@@ -205,10 +193,16 @@ document.addEventListener('DOMContentLoaded', function () {
         continueBtn.style.display = 'none';
         processBtn.style.display = 'block';
 
-        // Update payment details
-        updatePaymentDetails();
-
         // Load iframe with payment data
+        console.log('🔄 Loading payment iframe...');
+        if (typeof debugLog !== 'undefined') {
+            debugLog('APP_FORM', 'Form submitted, loading payment iframe', {
+                containerVisible: paymentContainer.style.display,
+                continueButtonVisible: continueBtn.style.display,
+                processButtonVisible: processBtn.style.display
+            });
+        }
+
         loadIframeWithPaymentData();
 
         // Scroll to payment area
@@ -220,24 +214,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Process payment button
     processBtn.addEventListener('click', function () {
-        console.log('Processing payment...');
+        console.log('🔄 Process payment button clicked');
+
+        // Add debugging for button click
+        if (typeof debugLog !== 'undefined') {
+            debugLog('APP_PAYMENT', 'Process payment button clicked', {
+                buttonText: processBtn.textContent,
+                buttonDisabled: processBtn.disabled,
+                currentLanguage: currentLanguage,
+                translationsAvailable: typeof translations !== 'undefined'
+            });
+        }
 
         // Send payment data to iframe
+        console.log('📤 Calling sendPaymentDataToIframe()...');
         sendPaymentDataToIframe();
 
         // Change button text to indicate processing
         const processingText = translations['processing_payment'] && translations['processing_payment'][currentLanguage]
             ? translations['processing_payment'][currentLanguage]
             : 'מעבד תשלום...';
+
+        if (typeof debugLog !== 'undefined') {
+            debugLog('APP_PAYMENT', 'Updating button text to processing state', {
+                oldText: processBtn.textContent,
+                newText: processingText,
+                language: currentLanguage
+            });
+        }
+
         processBtn.textContent = processingText;
         processBtn.disabled = true;
     });
 
-    // Add event listener for installments changes
-    setTimeout(() => {
-        const installmentsSelect = document.getElementById('payment-installments');
-        if (installmentsSelect) {
-            installmentsSelect.addEventListener('change', updatePaymentDetails);
-        }
-    }, 100);
 });

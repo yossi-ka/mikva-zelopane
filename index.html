@@ -28,13 +28,13 @@
             <label for="last-name" data-translate="form_last_name">שם משפחה:</label>
             <input type="text" id="last-name" name="last-name" >
             <label for="id-number" data-translate="form_id_number">מס' זהות:  *</label>
-            <input  type="text" id="id-number" name="id-number" >
+            <input  type="text" id="id-number" name="id-number" required> >
             <label for="email" data-translate="form_email">אימייל:  *</label>
-            <input  type="email" id="email" name="email" >
+            <input  type="email" id="email" name="email" required>
             <label for="phone" data-translate="form_phone">טלפון:  *</label>
-            <input  type="tel" id="phone" name="phone" >
+            <input  type="tel" id="phone" name="phone" required>
             <label for="ticket-quantity" data-translate="form_ticket_quantity">כמות כרטיסים:  *</label>
-            <input  type="number" id="ticket-quantity" name="ticket-quantity" min="1" value="1" >
+            <input  type="number" id="ticket-quantity" name="ticket-quantity" min="1" value="1" required>
            
             <label for="total-amount" data-translate="form_total_amount">סה"כ לתשלום:</label>
             <input readonly type="text" id="total-amount" name="total-amount" value="150 $" >
@@ -48,18 +48,6 @@
                 </div>
                 
                 <div class="payment-form-fields">
-                    <div class="form-group">
-                        <label for="payment-installments" data-translate="installments_label">מספר תשלומים:</label>
-                        <select id="payment-installments" name="installments" class="form-control">
-                            <option value="1" data-translate="installments_1">תשלום אחד</option>
-                            <option value="2" data-translate="installments_2">2 תשלומים</option>
-                            <option value="3" data-translate="installments_3">3 תשלומים</option>
-                            <option value="4" data-translate="installments_4">4 תשלומים</option>
-                            <option value="5" data-translate="installments_5">5 תשלומים</option>
-                            <option value="6" data-translate="installments_6">6 תשלומים</option>
-                        </select>
-                    </div>
-                    
                     <div class="form-group">
                         <label for="payment-total" data-translate="total_amount_label">סה"כ לתשלום:</label>
                         <div class="total-display">
