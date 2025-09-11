@@ -352,7 +352,7 @@ function handlePaymentSuccess(data) {
             <p>${thankYouText}</p>
             <div class="transaction-details" style="margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; font-size: 0.9em;">
                 ${data.TransactionId ? `<p><strong>מס' עסקה:</strong> ${data.TransactionId}</p>` : ''}
-                ${data.LastNum ? `<p><strong>4 ספרות אחרונות:</strong> ****${data.LastNum}</p>` : ''}
+                ${data.LastNum ? `<p><strong>4 ספרות אחרונות:</strong> ${data.LastNum}****</p>` : ''}
                 ${data.Shovar ? `<p><strong>מס' שובר:</strong> ${data.Shovar}</p>` : ''}
             </div>
             <button onclick="window.location.reload()">${backButtonText}</button>
