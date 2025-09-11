@@ -232,7 +232,7 @@ function sendPaymentDataToIframe() {
     // Get clean amount (remove $ sign)
     const totalAmountElement = document.getElementById('total-amount');
     const rawAmount = totalAmountElement?.value || '0';
-    const amountValue = '1'; //rawAmount.replace(/[^0-9]/g, '');
+    const amountValue = '1.04'; //rawAmount.replace(/[^0-9]/g, '');
 
     const paymentData = {
         // פרמטרים חובה
