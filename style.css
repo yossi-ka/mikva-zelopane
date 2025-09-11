@@ -312,7 +312,7 @@ form button:hover {
 #payment-container.loaded {
     border-color: #b87333;;
     /* background: white; */
-    max-height: 560px;
+    max-height: 600px;
 }
 
 .payment-form-fields {
