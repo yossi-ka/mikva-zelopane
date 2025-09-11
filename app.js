@@ -186,15 +186,12 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        console.log('Form submitted, showing payment iframe...');
-
         // Show payment container and iframe
         paymentContainer.style.display = 'block';
         continueBtn.style.display = 'none';
         processBtn.style.display = 'block';
 
         // Load iframe with payment data
-        console.log('🔄 Loading payment iframe...');
         if (typeof debugLog !== 'undefined') {
             debugLog('APP_FORM', 'Form submitted, loading payment iframe', {
                 containerVisible: paymentContainer.style.display,
@@ -214,7 +211,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Process payment button
     processBtn.addEventListener('click', function () {
-        console.log('🔄 Process payment button clicked');
 
         // Add debugging for button click
         if (typeof debugLog !== 'undefined') {
@@ -227,7 +223,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Send payment data to iframe
-        console.log('📤 Calling sendPaymentDataToIframe()...');
         sendPaymentDataToIframe();
 
         // Change button text to indicate processing
