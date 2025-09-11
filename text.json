@@ -43,8 +43,8 @@
       "en": "Last Name:"
     },
     "form_id_number": {
-      "he": "מס' זהות:  *",
-      "en": "ID Number:  *"
+      "he": "מס' זהות או דרכון:  *",
+      "en": "ID Number or Passport:  *"
     },
     "form_email": {
       "he": "אימייל:  *",
