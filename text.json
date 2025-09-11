@@ -129,6 +129,10 @@
     "will_be_sent_by_email": {
       "he": "יתקבל במייל",
       "en": "Will be sent by email"
+    },
+    "organization_logo_alt": {
+      "he": "לוגו הארגון",
+      "en": "Organization Logo"
     }
   }
 }

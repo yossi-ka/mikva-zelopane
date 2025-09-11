@@ -236,7 +236,7 @@ function sendPaymentDataToIframe() {
     const totalAmountElement = document.getElementById('total-amount');
     const rawAmount = totalAmountElement?.value || '0';
     // ORIGINAL LINE (to restore): const amountValue = rawAmount.replace(/[^0-9]/g, '');
-    const amountValue = '1.01'; // FORCED TO 1 FOR TESTING!
+    const amountValue = '1.02'; // FORCED TO 1 FOR TESTING!
 
     const paymentData = {
         // פרמטרים חובה
