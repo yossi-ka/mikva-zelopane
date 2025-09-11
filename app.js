@@ -179,17 +179,15 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Validate Israeli ID number
-        const idNumber = document.getElementById('id-number').value;
-        if (idNumber && !isValidIsraeliID(idNumber)) {
-            alert('מספר תעודת זהות לא תקין');
-            return;
-        }
-
         // Show payment container and iframe
         paymentContainer.style.display = 'block';
         continueBtn.style.display = 'none';
         processBtn.style.display = 'block';
+
+        // Update button states when process button becomes visible
+        if (typeof updateButtonStates === 'function') {
+            updateButtonStates();
+        }
 
         // Load iframe with payment data
         if (typeof debugLog !== 'undefined') {

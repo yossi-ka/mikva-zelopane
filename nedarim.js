@@ -367,9 +367,25 @@ function handlePaymentSuccess(data) {
         `;
         successContainer.appendChild(successDiv);
         sec2.appendChild(successContainer);
+
+        // Scroll to the success message smoothly
+        setTimeout(() => {
+            successDiv.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }, 100);
     } else {
         // Fallback: add to body
         document.body.appendChild(successDiv);
+
+        // Scroll to the success message
+        setTimeout(() => {
+            successDiv.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }, 100);
     }
 }
 
@@ -539,10 +555,80 @@ function isValidIsraeliID(id) {
     return sum % 10 === 0;
 }
 
+// ===== FORM VALIDATION FUNCTIONS =====
+
+// Function to check if all required fields are filled
+function checkRequiredFields() {
+    const requiredFields = [
+        'id-number',
+        'email', 
+        'phone',
+        'ticket-quantity'
+    ];
+    
+    let allFieldsFilled = true;
+    
+    for (const fieldId of requiredFields) {
+        const field = document.getElementById(fieldId);
+        if (!field || !field.value.trim()) {
+            allFieldsFilled = false;
+            break;
+        }
+    }
+    
+    return allFieldsFilled;
+}
+
+// Function to update button states based on form validation
+function updateButtonStates() {
+    const continueBtn = document.getElementById('continue-payment-btn');
+    const processBtn = document.getElementById('process-payment-btn');
+    const allFieldsFilled = checkRequiredFields();
+    
+    if (continueBtn) {
+        continueBtn.disabled = !allFieldsFilled;
+        continueBtn.style.opacity = allFieldsFilled ? '1' : '0.6';
+        continueBtn.style.cursor = allFieldsFilled ? 'pointer' : 'not-allowed';
+    }
+    
+    if (processBtn && processBtn.style.display !== 'none') {
+        processBtn.disabled = !allFieldsFilled;
+        processBtn.style.opacity = allFieldsFilled ? '1' : '0.6';
+        processBtn.style.cursor = allFieldsFilled ? 'pointer' : 'not-allowed';
+    }
+}
+
+// Function to initialize form validation
+function initializeFormValidation() {
+    const requiredFields = [
+        'id-number',
+        'email', 
+        'phone',
+        'ticket-quantity'
+    ];
+    
+    // Add event listeners to all required fields
+    requiredFields.forEach(fieldId => {
+        const field = document.getElementById(fieldId);
+        if (field) {
+            field.addEventListener('input', updateButtonStates);
+            field.addEventListener('blur', updateButtonStates);
+        }
+    });
+    
+    // Initial button state check
+    updateButtonStates();
+}
+
 // Initialize when DOM loads
 document.addEventListener('DOMContentLoaded', function () {
 
     initializeIframe();
+    
+    // Initialize form validation after a short delay to ensure all elements are loaded
+    setTimeout(() => {
+        initializeFormValidation();
+    }, 100);
 
 });
 
