@@ -184,8 +184,9 @@ function loadIframeWithPaymentData() {
     const iframe = document.getElementById('payment-iframe');
     const paymentContainer = document.getElementById('payment-container');
 
-    // Load the iframe with matara.pro URL (updated to match official sample)
-    const iframeUrl = 'https://matara.pro/nedarimplus/iframe?language=he';  // Hebrew by default
+    // Load the iframe with matara.pro URL - adjust language dynamically
+    const currentLang = (typeof currentLanguage !== 'undefined') ? currentLanguage : 'he';
+    const iframeUrl = `https://matara.pro/nedarimplus/iframe?language=${currentLang}`;
 
     iframe.src = iframeUrl;
     paymentContainer.classList.add('loaded');
@@ -215,7 +216,7 @@ function askIframeForHeight() {
     }
 }
 
-// שולח פרטי טופס ל-iFrame לפי התיעוד הרשמי
+// שולח פרטי טופס ל-iFrame
 function sendPaymentDataToIframe() {
 
     const iframe = document.getElementById('payment-iframe');
@@ -237,8 +238,6 @@ function sendPaymentDataToIframe() {
     // ORIGINAL LINE (to restore): const amountValue = rawAmount.replace(/[^0-9]/g, '');
     const amountValue = '1.01'; // FORCED TO 1 FOR TESTING!
 
-    // Prepare payment data object according to matara.pro documentation
-    // חובה לרשום את כל הפרמטרים, גם אם הם ריקים
     const paymentData = {
         // פרמטרים חובה
         'Mosad': PAYMENT_CONFIG.mosad,           // מזהה מוסד בנדרים פלוס (7 ספרות)
