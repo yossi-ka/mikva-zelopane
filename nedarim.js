@@ -561,13 +561,13 @@ function isValidIsraeliID(id) {
 function checkRequiredFields() {
     const requiredFields = [
         'id-number',
-        'email', 
+        'email',
         'phone',
         'ticket-quantity'
     ];
-    
+
     let allFieldsFilled = true;
-    
+
     for (const fieldId of requiredFields) {
         const field = document.getElementById(fieldId);
         if (!field || !field.value.trim()) {
@@ -575,7 +575,7 @@ function checkRequiredFields() {
             break;
         }
     }
-    
+
     return allFieldsFilled;
 }
 
@@ -584,13 +584,13 @@ function updateButtonStates() {
     const continueBtn = document.getElementById('continue-payment-btn');
     const processBtn = document.getElementById('process-payment-btn');
     const allFieldsFilled = checkRequiredFields();
-    
+
     if (continueBtn) {
         continueBtn.disabled = !allFieldsFilled;
         continueBtn.style.opacity = allFieldsFilled ? '1' : '0.6';
         continueBtn.style.cursor = allFieldsFilled ? 'pointer' : 'not-allowed';
     }
-    
+
     if (processBtn && processBtn.style.display !== 'none') {
         processBtn.disabled = !allFieldsFilled;
         processBtn.style.opacity = allFieldsFilled ? '1' : '0.6';
@@ -602,11 +602,11 @@ function updateButtonStates() {
 function initializeFormValidation() {
     const requiredFields = [
         'id-number',
-        'email', 
+        'email',
         'phone',
         'ticket-quantity'
     ];
-    
+
     // Add event listeners to all required fields
     requiredFields.forEach(fieldId => {
         const field = document.getElementById(fieldId);
@@ -615,7 +615,7 @@ function initializeFormValidation() {
             field.addEventListener('blur', updateButtonStates);
         }
     });
-    
+
     // Initial button state check
     updateButtonStates();
 }
@@ -624,7 +624,7 @@ function initializeFormValidation() {
 document.addEventListener('DOMContentLoaded', function () {
 
     initializeIframe();
-    
+
     // Initialize form validation after a short delay to ensure all elements are loaded
     setTimeout(() => {
         initializeFormValidation();
