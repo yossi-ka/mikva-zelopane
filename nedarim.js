@@ -256,7 +256,7 @@ function sendPaymentDataToIframe() {
         'Day': '',                               // יום לחיוב (רלוונטי רק ל-HK)
         'Groupe': 'מקוה אומן',                   // קטגוריה
         'Comment': `הזמנה ל-${formData.get('ticket-quantity')} כרטיסים למקוה`, // הערות
-        'Param1': '',                            // טקסט חופשי לקאלבק
+        'Param1': 'mikvah-uman-A25@c7f3e4d1',                            // טקסט חופשי לקאלבק
         'Param2': '',                            // טקסט חופשי לקאלבק
 
         // הגדרות קאלבק וקבלות
