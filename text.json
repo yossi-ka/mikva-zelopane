@@ -23,8 +23,8 @@
       "en": "Azamra Building - Uman"
     },
     "main_description": {
-      "he": "אנחנו במקווה שמנו דגש על הכל, כולל הפרטים הקטנים; מים חמים, בור קר וחם, מגבות ושמפו לכל אחד - לכל ימי ראש השנה. הרכישה תתאפשר רק לכמות מצומצמת של אנשים, אצלינו כל לקוח הוא VIP, עושים הכל על מנת שתוכלו לטבול בהידור במקוה מפואר שהושקע במיוחד עבורכם כשאתם באים לרבינו הק' על ראש השנה. ברכישה תקבלו כרטיס זכות כניסה למקוה לאדם לכל ימי ראש השנה, החל מיום רביעי ועד צום גדליה. את הכרטיסים ניתן יהיה לקבל בלובי של בנין אזמרה.",
-      "en": "At our mikvah, we have placed emphasis on everything, including the smallest details; hot water, cold and warm pools, towels and shampoo for everyone - for all the days of Rosh Hashanah. The purchase will be available only to a limited number of people. With us, every customer is VIP - we do everything so that you can immerse with beauty and excellence in a magnificent mikvah that was specially invested for you when you come to our holy Rebbe for Rosh Hashanah. With your purchase you will receive an entry ticket to the mikvah per person for all the days of Rosh Hashanah, starting from Wednesday until the fast of Gedaliah. The tickets can be collected at the lobby of the Azamra building."
+      "he": "ברכישה תקבלו כרטיס זכות כניסה למקוה לאדם",
+      "en": "With your purchase you will receive an entry ticket to the mikvah per person"
     },
     "show_photos_btn": {
       "he": "ראה תמונות",
@@ -145,6 +145,34 @@
     "mikvah_photos_title": {
       "he": "תמונות המקוה",
       "en": "Mikvah Photos"
+    },
+    "mikvah_description": {
+      "he": "אנחנו במקווה שמנו דגש על הכל, כולל הפרטים הקטנים; מים חמים, בור קר וחם, מגבות ושמפו לכל אחד. הרכישה תתאפשר רק לכמות מצומצמת של אנשים, אצלינו כל לקוח הוא VIP, עושים הכל על מנת שתוכלו לטבול בהידור במקוה מפואר שהושקע במיוחד עבורכם כשאתם באים לרבינו הק' על ראש השנה.",
+      "en": "At our mikvah, we have placed emphasis on everything, including the smallest details; hot water, cold and warm pools, towels and shampoo for everyone. The purchase will be available only to a limited number of people. With us, every customer is VIP - we do everything so that you can immerse with beauty and excellence in a magnificent mikvah that was specially invested for you when you come to our holy Rebbe for Rosh Hashanah."
+    },
+    "pricing_title": {
+      "he": "💰 מחירון",
+      "en": "💰 Pricing"
+    },
+    "pricing_info": {
+      "he": "1-4 כרטיסים: $160 לכרטיס • 5-9 כרטיסים: $150 לכרטיס • 10+ כרטיסים: $140 לכרטיס",
+      "en": "1-4 tickets: $160 per ticket • 5-9 tickets: $150 per ticket • 10+ tickets: $140 per ticket"
+    },
+    "opening_days_title": {
+      "he": "📅 ימי פתיחת המקוה",
+      "en": "📅 Mikvah Opening Days"
+    },
+    "opening_days_info": {
+      "he": "כל ימי ראש השנה, החל מיום רביעי ועד צום גדליה",
+      "en": "All days of Rosh Hashanah, starting from Wednesday until the fast of Gedaliah"
+    },
+    "ticket_collection_title": {
+      "he": "🎫 מקום קבלת הכרטיסים",
+      "en": "🎫 Ticket Collection Location"
+    },
+    "ticket_collection_info": {
+      "he": "את הכרטיסים ניתן יהיה לקבל בלובי של בנין אזמרה",
+      "en": "The tickets can be collected at the lobby of the Azamra building"
     }
   }
 }
