@@ -63,7 +63,21 @@ function updateTranslations() {
     translatableElements.forEach(element => {
         const key = element.getAttribute('data-translate');
         if (translations[key] && translations[key][currentLanguage]) {
-            element.textContent = translations[key][currentLanguage];
+            // Check if the translation contains HTML (like <br> tags)
+            if (translations[key][currentLanguage].includes('<br>')) {
+                element.innerHTML = translations[key][currentLanguage];
+            } else {
+                element.textContent = translations[key][currentLanguage];
+            }
+        }
+    });
+
+    // Update price items with data-he and data-en attributes
+    const priceItems = document.querySelectorAll('.price-item[data-he][data-en]');
+    priceItems.forEach(item => {
+        const text = currentLanguage === 'he' ? item.getAttribute('data-he') : item.getAttribute('data-en');
+        if (text) {
+            item.textContent = text;
         }
     });
 
