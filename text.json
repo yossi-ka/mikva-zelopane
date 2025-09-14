@@ -179,8 +179,8 @@
       "en": "I have coupon"
     },
     "enter_coupon": {
-      "he": "הכנס קופון:",
-      "en": "Enter coupon:"
+      "he": "הכנס קופון: (המתן מספר שניות לעדכון המחיר)",
+      "en": "Enter coupon: (please wait a few seconds for the price to update)"
     }
   }
 }
