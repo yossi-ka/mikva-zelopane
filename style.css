@@ -455,6 +455,20 @@ input[readonly] {
     cursor: not-allowed;
 }
 
+a{
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #b87333;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cupon{
+    display: none;
+}   
+
 form button {
     width: 100%;
     background: linear-gradient(45deg, #b87333, #1a1a1a);

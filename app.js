@@ -267,3 +267,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+
+//  Show cupon input when link is clicked
+document.getElementById('cuponLink').addEventListener('click', function () {
+    const cuponElements = document.querySelectorAll('.cupon');
+    cuponElements.forEach(el => {
+        el.style.display = 'block';
+    });
+});
