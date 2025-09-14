@@ -141,6 +141,10 @@
     "billing_organization": {
       "he": "צלילים לנשמה",
       "en": "Tzelilim Laneshama"
+    },
+    "mikvah_photos_title": {
+      "he": "תמונות המקוה",
+      "en": "Mikvah Photos"
     }
   }
 }

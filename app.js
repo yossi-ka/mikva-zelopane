@@ -114,15 +114,27 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// Ticket price calculation
+// Ticket price calculation with tiered pricing
 const ticketQuantityInput = document.getElementById('ticket-quantity');
 const totalAmountInput = document.getElementById('total-amount');
-const ticketPrice = 150;
+
+// Function to calculate price based on quantity
+function calculatePrice(quantity) {
+    if (quantity >= 1 && quantity <= 4) {
+        return 160; // $160 per ticket for 1-4 tickets
+    } else if (quantity >= 5 && quantity <= 9) {
+        return 150; // $150 per ticket for 5-9 tickets
+    } else if (quantity >= 10) {
+        return 140; // $140 per ticket for 10+ tickets
+    }
+    return 0; // No tickets
+}
 
 // Update total amount when quantity changes
 ticketQuantityInput.addEventListener('input', () => {
     const quantity = parseInt(ticketQuantityInput.value) || 0;
-    const total = quantity * ticketPrice;
+    const pricePerTicket = calculatePrice(quantity);
+    const total = quantity * pricePerTicket;
     totalAmountInput.value = total + ' $';
 
     // Update payment container total as well

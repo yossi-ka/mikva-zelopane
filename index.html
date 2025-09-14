@@ -73,6 +73,7 @@
             <button id="purchase-btn" data-translate="purchase_btn">אני רוצה לרכוש</button>
         </div>
     </section>
+
     <section id="sec2">
         <h2>הזמנת כרטיסים למקוה</h2>
         <form>
@@ -90,7 +91,7 @@
             <input  type="number" id="ticket-quantity" name="ticket-quantity" min="1" value="1" required>
            
             <label for="total-amount" data-translate="form_total_amount">סה"כ לתשלום:</label>
-            <input readonly type="text" id="total-amount" name="total-amount" value="150 $" >
+            <input readonly type="text" id="total-amount" name="total-amount" value="160 $" >
             
             <!-- Payment iframe will appear here after form submission -->
             <div id="payment-container" style="display: none;">
@@ -120,8 +121,9 @@
             <button type="button" id="process-payment-btn" style="display: none;" data-translate="process_payment_btn">בצע תשלום</button>
         </form>
     </section>
+
     <section id="sec3">
-        <h2>תמונות המקוה</h2>
+        <h2 data-translate="mikvah_photos_title">תמונות המקוה</h2>
         <div class="gallery-video">
             <video controls poster="Pic/1p.jpg">
                 <source src="Pic/v1.mp4" type="video/mp4">
