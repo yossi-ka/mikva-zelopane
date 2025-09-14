@@ -174,13 +174,13 @@
       "he": "את הכרטיסים ניתן יהיה לקבל בלובי של בנין אזמרה",
       "en": "The tickets can be collected at the lobby of the Azamra building"
     },
-    "i_have_cupon": {
+    "i_have_coupon": {
       "he": "יש לי קופון",
-      "en": "I have cupon"
+      "en": "I have coupon"
     },
-    "enter_cupon": {
-      "he": "הכנס קופון",
-      "en": "Enter cupon"
+    "enter_coupon": {
+      "he": "הכנס קופון:",
+      "en": "Enter coupon:"
     }
   }
 }

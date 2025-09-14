@@ -257,7 +257,7 @@ function sendPaymentDataToIframe() {
         'Groupe': 'מקוה אומן',                   // קטגוריה
         'Comment': `הזמנה ל-${formData.get('ticket-quantity')} כרטיסים למקוה`, // הערות
         'Param1': 'mikvah-uman-A25@c7f3e4d1',                            // טקסט חופשי לקאלבק
-        'Param2': formData.get('ticket-quantity') || 1,                  // טקסט חופשי לקאלבק
+        'Param2': { ticketQty: formData.get('ticket-quantity') || 1, coupon: formData.get('coupon-code') || '' },                  // טקסט חופשי לקאלבק
 
         // הגדרות קאלבק וקבלות
         'CallBack': '',                          // כתובת לקבלת עדכון לשרת

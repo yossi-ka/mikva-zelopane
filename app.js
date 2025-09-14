@@ -268,10 +268,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-//  Show cupon input when link is clicked
-document.getElementById('cuponLink').addEventListener('click', function () {
-    const cuponElements = document.querySelectorAll('.cupon');
-    cuponElements.forEach(el => {
+//  Show coupon input when link is clicked
+document.getElementById('couponLink').addEventListener('click', function () {
+    const couponElements = document.querySelectorAll('.coupon');
+    couponElements.forEach(el => {
         el.style.display = 'block';
     });
 });
