@@ -176,7 +176,6 @@ body[dir="ltr"] {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     font-weight: 500;
     white-space: nowrap;
-    overflow: hidden;
     text-overflow: ellipsis;
 }
 
