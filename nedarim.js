@@ -5,7 +5,7 @@
 const PAYMENT_CONFIG = {
     mosad: '7005806',        // מזהה מוסד בנדרים פלוס (7 ספרות)
     apiValid: 'CDMSfoGz4j',  // טקסט אימות
-    currency: '2',           // מטבע: 1 (שקל) | 2 (דולר) - CHANGED FOR TESTING!
+    currency: '1',           // מטבע: 1 (שקל) | 2 (דולר) - CHANGED FOR TESTING!
     paymentType: 'Ragil'     // סוג תשלום: Ragil (עסקה רגילה)
 };
 
@@ -232,7 +232,7 @@ function sendPaymentDataToIframe() {
     // Get clean amount (remove $ sign)
     const totalAmountElement = document.getElementById('total-amount');
     const rawAmount = totalAmountElement?.value || '0';
-    const amountValue = rawAmount.replace(/[^0-9]/g, '');
+    const amountValue = 21; // rawAmount.replace(/[^0-9]/g, '');
 
     const paymentData = {
         // פרמטרים חובה
