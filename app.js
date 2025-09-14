@@ -133,13 +133,14 @@ const ticketQuantityInput = document.getElementById('ticket-quantity');
 const totalAmountInput = document.getElementById('total-amount');
 
 // Function to calculate price based on quantity
-function calculatePrice(quantity) {
+function calculatePrice(quantity, validCoupon = false, discount = 0) {
+    const disc = validCoupon ? discount : 0;
     if (quantity >= 1 && quantity <= 4) {
-        return 160; // $160 per ticket for 1-4 tickets
+        return 160 - disc; // $160 per ticket for 1-4 tickets
     } else if (quantity >= 5 && quantity <= 9) {
-        return 150; // $150 per ticket for 5-9 tickets
+        return 150 - disc; // $150 per ticket for 5-9 tickets
     } else if (quantity >= 10) {
-        return 140; // $140 per ticket for 10+ tickets
+        return 140 - disc; // $140 per ticket for 10+ tickets
     }
     return 0; // No tickets
 }
@@ -275,3 +276,23 @@ document.getElementById('couponLink').addEventListener('click', function () {
         el.style.display = 'block';
     });
 });
+
+const calculateTotalAmount = async () => {
+    const url = "https://script.google.com/macros/s/AKfycbyMrvZESBbfggHyhKM3p8VD0BGTnGXW61zMxnf_s7QJpawT7yZ_Wlr2oqYbZXQsaa2I3A/exec?coupon=";
+    const couponCodeInput = document.getElementById('coupon-code').value.trim() || '';
+    const fullUrl = `${url}${couponCodeInput}`;
+    const res = await fetch(fullUrl);
+    const data = await res.json();
+    const validCoupon = data.isValid;
+    const quantity = parseInt(ticketQuantityInput.value) || 0;
+
+    const ticketPrice = calculatePrice(quantity, validCoupon, data.discountPerTicket || 0);
+    const totalAmount = ticketPrice * quantity;
+
+    totalAmountInput.value = totalAmount.toFixed(2) + ' $';
+};
+ticketQuantityInput.addEventListener('input', calculateTotalAmount);
+document.getElementById('coupon-code').addEventListener('input', calculateTotalAmount);
+
+// Initial total amount calculation
+calculateTotalAmount();
