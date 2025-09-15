@@ -138,6 +138,7 @@ function initializeIframe() {
 
 // Handle messages from iframe according to documentation
 function handleIframeMessage(data) {
+    console.log(data);
 
     const iframe = document.getElementById('payment-iframe');
 
@@ -232,7 +233,7 @@ function sendPaymentDataToIframe() {
     // Get clean amount (remove $ sign)
     const totalAmountElement = document.getElementById('total-amount');
     const rawAmount = totalAmountElement?.value || '0';
-    const amountValue = rawAmount.replace(/[^0-9]/g, '');
+    const amountValue = rawAmount.replace(/[^0-9.]/g, '');
 
     const paymentData = {
         // פרמטרים חובה

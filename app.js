@@ -239,6 +239,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
+        console.log("Process payment button clicked");
         // Send payment data to iframe
         sendPaymentDataToIframe();
 
@@ -284,6 +285,7 @@ const calculateTotalAmount = async () => {
 
         const ticketPrice = calculatePrice(quantity, validCoupon, discountPerTicket);
         const totalAmount = ticketPrice * quantity;
+console.log(totalAmount);
 
         // Update the visible total in the form (with currency)
         totalAmountInput.value = totalAmount.toFixed(2) + ' $';
