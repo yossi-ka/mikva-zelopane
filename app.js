@@ -146,17 +146,9 @@ function calculatePrice(quantity, validCoupon = false, discount = 0) {
 }
 
 // Update total amount when quantity changes
+// Use centralized calculateTotalAmount so coupon discount from server is applied consistently
 ticketQuantityInput.addEventListener('input', () => {
-    const quantity = parseInt(ticketQuantityInput.value) || 0;
-    const pricePerTicket = calculatePrice(quantity);
-    const total = quantity * pricePerTicket;
-    totalAmountInput.value = total + ' $';
-
-    // Update payment container total as well
-    const paymentTotalAmount = document.getElementById('payment-total-amount');
-    if (paymentTotalAmount) {
-        paymentTotalAmount.textContent = total;
-    }
+    calculateTotalAmount();
 });
 
 // Navigation functionality for buttons
@@ -280,16 +272,40 @@ document.getElementById('couponLink').addEventListener('click', function () {
 const calculateTotalAmount = async () => {
     const url = "https://script.google.com/macros/s/AKfycbyMrvZESBbfggHyhKM3p8VD0BGTnGXW61zMxnf_s7QJpawT7yZ_Wlr2oqYbZXQsaa2I3A/exec?coupon=";
     const couponCodeInput = document.getElementById('coupon-code').value.trim() || '';
-    const fullUrl = `${url}${couponCodeInput}`;
-    const res = await fetch(fullUrl);
-    const data = await res.json();
-    const validCoupon = data.isValid;
-    const quantity = parseInt(ticketQuantityInput.value) || 0;
+    const fullUrl = `${url}${encodeURIComponent(couponCodeInput)}`;
 
-    const ticketPrice = calculatePrice(quantity, validCoupon, data.discountPerTicket || 0);
-    const totalAmount = ticketPrice * quantity;
+    try {
+        const res = await fetch(fullUrl);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        const validCoupon = !!data.isValid;
+        const discountPerTicket = Number(data.discountPerTicket || 0);
+        const quantity = parseInt(ticketQuantityInput.value) || 0;
 
-    totalAmountInput.value = totalAmount.toFixed(2) + ' $';
+        const ticketPrice = calculatePrice(quantity, validCoupon, discountPerTicket);
+        const totalAmount = ticketPrice * quantity;
+
+        // Update the visible total in the form (with currency)
+        totalAmountInput.value = totalAmount.toFixed(2) + ' $';
+
+        // Update payment container numeric total (no currency symbol)
+        const paymentTotalAmount = document.getElementById('payment-total-amount');
+        if (paymentTotalAmount) {
+            // Show as number without formatting to be consumed by iframe if needed
+            paymentTotalAmount.textContent = totalAmount.toFixed(2);
+        }
+
+    } catch (error) {
+        console.error('Error fetching coupon data or calculating total:', error);
+        // On error, fallback to local calculation without coupon
+        const quantity = parseInt(ticketQuantityInput.value) || 0;
+        const ticketPrice = calculatePrice(quantity, false, 0);
+        const totalAmount = ticketPrice * quantity;
+
+        totalAmountInput.value = totalAmount.toFixed(2) + ' $';
+        const paymentTotalAmount = document.getElementById('payment-total-amount');
+        if (paymentTotalAmount) paymentTotalAmount.textContent = totalAmount.toFixed(2);
+    }
 };
 ticketQuantityInput.addEventListener('input', calculateTotalAmount);
 document.getElementById('coupon-code').addEventListener('input', calculateTotalAmount);
