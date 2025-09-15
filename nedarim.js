@@ -138,7 +138,6 @@ function initializeIframe() {
 
 // Handle messages from iframe according to documentation
 function handleIframeMessage(data) {
-    console.log(data);
 
     const iframe = document.getElementById('payment-iframe');
 
