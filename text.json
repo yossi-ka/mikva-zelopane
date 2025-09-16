@@ -181,6 +181,10 @@
     "enter_coupon": {
       "he": "הכנס קופון: (המתן מספר שניות לעדכון המחיר)",
       "en": "Enter coupon: (please wait a few seconds for the price to update)"
+    },
+    "purchase_note": {
+      "he": "לאחר הרכישה יישלח אליכם מייל עם כל הפרטים, יש לבדוק את תיקיית הספאם.",
+      "en": "After the purchase, an email with all the details will be sent to you, please check the spam folder."
     }
   }
 }
